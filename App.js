@@ -13,13 +13,13 @@ export default class App extends React.Component {
     Expo.Audio.setIsEnabled(true);
   }
 
-  async componentWillMount() {
-    if (Platform.OS === 'android') {
-      await Expo.Font.loadAsync({
-        'Roboto': require('native-base/Fonts/Roboto.ttf'),
-        'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
-      });
-    }
+  componentWillMount() {
+    // if (Platform.OS === 'android') {
+    //   Expo.Font.loadAsync({
+    //     'Roboto': require('native-base/Fonts/Roboto.ttf'),
+    //     'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+    //   });
+    // }
 
     this.setState({isReady: true});
   }
@@ -81,7 +81,7 @@ class SoundButton extends React.Component {
     }    
   }
 
-  _onSoundButtonPress = async () => {
+  _onSoundButtonPress = () => {
     this.state.sound.setPosition(0);
     this.state.sound.play();
   }
