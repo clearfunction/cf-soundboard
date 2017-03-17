@@ -14,13 +14,6 @@ export default class App extends React.Component {
   }
 
   componentWillMount() {
-    // if (Platform.OS === 'android') {
-    //   Expo.Font.loadAsync({
-    //     'Roboto': require('native-base/Fonts/Roboto.ttf'),
-    //     'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
-    //   });
-    // }
-
     this.setState({isReady: true});
   }
 
@@ -34,7 +27,7 @@ export default class App extends React.Component {
         <Header>
             <Left />
             <Body>
-                <Title>Soundboard</Title>
+                <Title style={{ marginTop: Platform.OS === 'android' ? Expo.Constants.statusBarHeight : 0 }}>Soundboard</Title>
             </Body>
             <Right />
         </Header>
