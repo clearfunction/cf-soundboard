@@ -1,5 +1,7 @@
 {
   "expo": {
+    "name": "CF Soundboard",
+    "icon": "assets/cf-square.png",
     "sdkVersion": "14.0.0",
     "packagerOpts": {
       "assetExts": [
@@ -8,7 +10,7 @@
       ]
     },
     "android": {
-     "package": "clearfunction.soundboard.exp",
+     "package": "clearfunction.soundboard.exp"
    }
   }
 }

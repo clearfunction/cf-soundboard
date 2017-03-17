@@ -81,7 +81,7 @@ class SoundButton extends React.Component {
 
   render() {
     return (      
-      <Button onPress={this._onSoundButtonPress} style={{margin:5}} info block>
+      <Button onPress={this._onSoundButtonPress} style={{margin:5}} block>
         <Text>{this.props.text}</Text>
       </Button>       
     );
