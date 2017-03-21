@@ -32,11 +32,14 @@ export default class App extends React.Component {
             <Right />
         </Header>
         <Content>
-          <SoundButton text="rekt" sound="rekt" />        
-          <SoundButton text="Ding" sound="bell" />        
-          <SoundButton text="Chewie" sound="chewie" />        
-          <SoundButton text="It Depends" sound="itdepends" />        
-          <SoundButton text="Sad" sound="sadtrombone" />        
+          <SoundButton text="rekt" sound="rekt" />
+          <SoundButton text="Ding" sound="bell" />
+          <SoundButton text="Chewie" sound="chewie" />
+          <SoundButton text="It Depends" sound="itdepends" />
+          <SoundButton text="Sad" sound="sadtrombone" />
+          <SoundButton text="Fight On" sound="fighton" />        
+          <SoundButton text="Daniel" sound="damndaniel" />        
+          <SoundButton text="Jesse" sound="rickroll" />        
         </Content>
       </Container>
     );
