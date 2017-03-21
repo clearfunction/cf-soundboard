@@ -40,12 +40,12 @@ export default class App extends React.Component {
         <Content>
           <SoundButton text="rekt" sound="rekt" />        
           <SoundButton text="Ding" sound="bell" />        
-          <SoundButton text="Chewie!" sound="chewie" />        
-          <SoundButton text="It Depends" sound="itdepends" />        
+          <SoundButton text="Chewie 🐻" sound="chewie" />        
+          <SoundButton text="It Depends 🎙️" sound="itdepends" />        
           <SoundButton text="Sad" sound="sadtrombone" />        
           <SoundButton text="Shoryuken 🔥" sound="shoryuken" />        
-          <SoundButton text="Fight On" sound="fighton" />        
-          <SoundButton text="Daniel" sound="damndaniel" />        
+          <SoundButton text="Fight On 💪" sound="fighton" />        
+          <SoundButton text="Daniel 👟" sound="damndaniel" />        
           <SoundButton text="Jesse" sound="rickroll" />        
         </Content>
       </Container>
@@ -75,6 +75,7 @@ class SoundButton extends React.Component {
         break;
       case 'shoryuken':
         soundSource = require("./assets/sounds/shoryuken.mp3")
+        break;
      case 'fighton':
         soundSource = require("./assets/sounds/fighton.mp3")
         break;
