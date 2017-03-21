@@ -38,6 +38,8 @@ export default class App extends React.Component {
             <Right />
         </Header>
         <Content>
+          <SoundButton text="Burn" sound="sickburn" />        
+          <SoundButton text="Burn (Nukem)" sound="oohburn" />        
           <SoundButton text="rekt" sound="rekt" />        
           <SoundButton text="Ding" sound="bell" />        
           <SoundButton text="Chewie 🐻" sound="chewie" />        
@@ -58,6 +60,12 @@ class SoundButton extends React.Component {
     super(props);
     let soundSource = '';
     switch (props.sound){
+      case 'sickburn':
+        soundSource = require("./assets/sounds/sickburn.mp3")
+        break;
+      case 'oohburn':
+        soundSource = require("./assets/sounds/oohburn.mp3")
+        break;        
       case 'bell':
         soundSource = require("./assets/sounds/bell.mp3")
         break;
