@@ -66,6 +66,15 @@ class SoundButton extends React.Component {
       case 'sadtrombone':
         soundSource = require("./assets/sounds/sadtrombone.mp3")
         break;
+     case 'fighton':
+        soundSource = require("./assets/sounds/fighton.mp3")
+        break;
+      case 'damndaniel':
+        soundSource = require("./assets/sounds/damndaniel.mp3")
+        break;
+      case 'rickroll':
+        soundSource = require("./assets/sounds/rickroll.mp3")
+        break;
     }
     const soundResource = new Expo.Audio.Sound({
         source: soundSource
