@@ -13,7 +13,13 @@ export default class App extends React.Component {
     Expo.Audio.setIsEnabled(true);
   }
 
-  componentWillMount() {
+  async componentWillMount() {
+	  if (Platform.OS === 'android') {		
+      await Expo.Font.loadAsync({		
+        'Roboto': require('native-base/Fonts/Roboto.ttf'),		
+        'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),		
+        });		
+    }
     this.setState({isReady: true});
   }
 
@@ -34,9 +40,10 @@ export default class App extends React.Component {
         <Content>
           <SoundButton text="rekt" sound="rekt" />        
           <SoundButton text="Ding" sound="bell" />        
-          <SoundButton text="Chewie" sound="chewie" />        
+          <SoundButton text="Chewie!" sound="chewie" />        
           <SoundButton text="It Depends" sound="itdepends" />        
           <SoundButton text="Sad" sound="sadtrombone" />        
+          <SoundButton text="Shoryuken 🔥" sound="shoryuken" />        
         </Content>
       </Container>
     );
@@ -62,6 +69,9 @@ class SoundButton extends React.Component {
         break;
       case 'sadtrombone':
         soundSource = require("./assets/sounds/sadtrombone.mp3")
+        break;
+      case 'shoryuken':
+        soundSource = require("./assets/sounds/shoryuken.mp3")
         break;
     }
     const soundResource = new Expo.Audio.Sound({
