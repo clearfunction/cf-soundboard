@@ -32,11 +32,12 @@ export default class App extends React.Component {
             <Right />
         </Header>
         <Content>
-          <SoundButton text="rekt" sound="rekt" />        
-          <SoundButton text="Ding" sound="bell" />        
-          <SoundButton text="Chewie" sound="chewie" />        
-          <SoundButton text="It Depends" sound="itdepends" />        
-          <SoundButton text="Sad" sound="sadtrombone" />        
+          <SoundButton text="rekt" sound="rekt" />
+          <SoundButton text="Ding" sound="bell" />
+          <SoundButton text="Chewie" sound="chewie" />
+          <SoundButton text="It Depends" sound="itdepends" />
+          <SoundButton text="Sad" sound="sadtrombone" />
+          <SoundButton text="Guiles" sound="guiles" />
         </Content>
       </Container>
     );
@@ -63,6 +64,9 @@ class SoundButton extends React.Component {
       case 'sadtrombone':
         soundSource = require("./assets/sounds/sadtrombone.mp3")
         break;
+      case 'guiles':
+        soundSource = require("./assets/sounds/guiles.mp3")
+        break;
     }
     const soundResource = new Expo.Audio.Sound({
         source: soundSource
@@ -71,7 +75,7 @@ class SoundButton extends React.Component {
     soundResource.loadAsync();
     this.state = {
       sound: soundResource
-    }    
+    }
   }
 
   _onSoundButtonPress = () => {
@@ -80,10 +84,10 @@ class SoundButton extends React.Component {
   }
 
   render() {
-    return (      
+    return (
       <Button onPress={this._onSoundButtonPress} style={{margin:5}} block>
         <Text>{this.props.text}</Text>
-      </Button>       
+      </Button>
     );
   }
 }
