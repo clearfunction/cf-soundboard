@@ -14,11 +14,11 @@ export default class App extends React.Component {
   }
 
   async componentWillMount() {
-	  if (Platform.OS === 'android') {		
-      await Expo.Font.loadAsync({		
-        'Roboto': require('native-base/Fonts/Roboto.ttf'),		
-        'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),		
-        });		
+	  if (Platform.OS === 'android') {
+      await Expo.Font.loadAsync({
+        'Roboto': require('native-base/Fonts/Roboto.ttf'),
+        'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+        });
     }
     this.setState({isReady: true});
   }
@@ -38,17 +38,18 @@ export default class App extends React.Component {
             <Right />
         </Header>
         <Content>
-          <SoundButton text="Burn" sound="sickburn" />        
-          <SoundButton text="Burn (Nukem)" sound="oohburn" />        
-          <SoundButton text="rekt" sound="rekt" />        
-          <SoundButton text="Ding" sound="bell" />        
-          <SoundButton text="Chewie 🐻" sound="chewie" />        
-          <SoundButton text="It Depends 🎙️" sound="itdepends" />        
-          <SoundButton text="Sad" sound="sadtrombone" />        
-          <SoundButton text="Shoryuken 🔥" sound="shoryuken" />        
-          <SoundButton text="Fight On 💪" sound="fighton" />        
-          <SoundButton text="Daniel 👟" sound="damndaniel" />        
-          <SoundButton text="Jesse" sound="rickroll" />        
+          <SoundButton text="Burn" sound="sickburn" />
+          <SoundButton text="Burn (Nukem)" sound="oohburn" />
+          <SoundButton text="rekt" sound="rekt" />
+          <SoundButton text="Ding" sound="bell" />
+          <SoundButton text="Chewie 🐻" sound="chewie" />
+          <SoundButton text="It Depends 🎙️" sound="itdepends" />
+          <SoundButton text="Sad" sound="sadtrombone" />
+          <SoundButton text="Shoryuken 🔥" sound="shoryuken" />
+          <SoundButton text="Fight On 💪" sound="fighton" />
+          <SoundButton text="Daniel 👟" sound="damndaniel" />
+          <SoundButton text="Jesse" sound="rickroll" />
+          <SoundButton text="Guiles" sound="guiles" />
         </Content>
       </Container>
     );
@@ -65,7 +66,7 @@ class SoundButton extends React.Component {
         break;
       case 'oohburn':
         soundSource = require("./assets/sounds/oohburn.mp3")
-        break;        
+        break;
       case 'bell':
         soundSource = require("./assets/sounds/bell.mp3")
         break;
@@ -93,6 +94,9 @@ class SoundButton extends React.Component {
       case 'rickroll':
         soundSource = require("./assets/sounds/rickroll.mp3")
         break;
+      case 'guiles':
+        soundSource = require("./assets/sounds/guiles.mp3")
+        break;
     }
     const soundResource = new Expo.Audio.Sound({
         source: soundSource
@@ -101,7 +105,7 @@ class SoundButton extends React.Component {
     soundResource.loadAsync();
     this.state = {
       sound: soundResource
-    }    
+    }
   }
 
   _onSoundButtonPress = () => {
@@ -110,10 +114,10 @@ class SoundButton extends React.Component {
   }
 
   render() {
-    return (      
+    return (
       <Button onPress={this._onSoundButtonPress} style={{margin:5}} block>
         <Text>{this.props.text}</Text>
-      </Button>       
+      </Button>
     );
   }
 }
